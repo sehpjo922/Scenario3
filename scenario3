@@ -1,0 +1,25 @@
+public class InvestmentCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Initial investment amount: ");
+        double initialInvestment = input.nextDouble();
+        
+        System.out.print("Expected rate of return (%): ");
+        double rateOfReturn = input.nextDouble();
+        
+        System.out.print("Investment duration (years): ");
+        int investmentDuration = input.nextInt();
+        
+        System.out.print("Periodic contributions: ");
+        double periodicContribution = input.nextDouble();
+        
+        double totalInvestment = initialInvestment;
+        
+        for (int i = 0; i < investmentDuration; i++) {
+            totalInvestment += periodicContribution;
+            totalInvestment *= 1 + (rateOfReturn / 100);
+        }
+        
+        System.out.println("Total investment value: $" + totalInvestment);
+    }
